@@ -12,8 +12,9 @@ export default {
     },
     data() {
         return {
-            post: [],
+            posts: [],
             isLoading: false,
+            imageUrls: {}, // Keep track of fetched image URLs
             ProjectTitle: "Projects",
             ProjectTitleStyle: {
                 color: "#1b3764",
@@ -25,15 +26,22 @@ export default {
         };
     },
     methods: {
-        getPosts() {
+        async getPosts() {
             this.isLoading = true;
-/*             fetch("http://localhost/liendev/wp-json/wp/v2/posts")
-                .then((response) => response.json())
-                .then((data) => {
-                    this.post = data;
-                    this.isLoading = false;
-                    console.log(data);
-                }); */
+            try {
+                const response = await axios.get(
+                    "https://liendev.000webhostapp.com/wp-json/wp/v2/posts?_embed&acf_format=standard"
+                );
+                this.posts = response.data;
+                // Fetch image URLs for each post
+                console.log(
+                    this.posts
+                );
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            } finally {
+                this.isLoading = false;
+            }
         },
     },
     mounted() {
@@ -51,20 +59,31 @@ export default {
             />
 
             <div class="projects-content">
-                <div class="projects-list">
-<!--                     <div class="project-card" v-for="project in this.post">
+                <div class="projects-list" v-if="this.posts">
+                    <div
+                        class="project-card"
+                        v-for="project in this.posts"
+                        :key="project.id"
+                    >
                         <Titles
                             :titleFive="project.title.rendered"
                             :style="this.ProjectTitleStyle"
                         />
                         <Paragraph :text="project.slug" />
+                        <img
+                            :src="
+                                project._embedded['wp:featuredmedia']['0']
+                                    .source_url
+                            "
+                            alt=""
+                        />
                         <a href="#">
                             <ButtonSmall
                                 :buttonText="'Link'"
                                 :style="ProjectButtonStyle"
                             />
                         </a>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,5 +94,14 @@ export default {
 .projects-container {
     display: flex;
     justify-content: center;
+
+    .projects-content {
+        .projects-list {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+    }
 }
 </style>
