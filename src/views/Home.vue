@@ -10,7 +10,6 @@ export default {
         NavBar,
         HomeHero,
         Projects,
-        /*Comment for testing */
         Footer
     }
 }
