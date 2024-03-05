@@ -49,7 +49,7 @@ export default {
 </script>
 
 <template>
-    <div class="projects-container">
+    <div class="projects-container" v-if="!this.isLoading">
         <div class="custom-container">
             <Titles
                 :titleTwo="this.ProjectTitle"
@@ -57,7 +57,7 @@ export default {
             />
 
             <div class="projects-content">
-                <div class="projects-list" v-if="this.posts">
+                <div class="projects-list" v-if="!this.isLoading">
                     <ProjectCard
                         :project="project"
                         v-for="project in this.posts"

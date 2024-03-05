@@ -49,19 +49,20 @@ export default {
   flex-direction: column;
   gap: 50px;
 
-  ul {
+/*   ul {
     list-style-type: none;
   }
 
   ol {
     margin-left: 20px;
-  }
+  } */
 
   li {
     font-family: "Inter", sans-serif;
     font-size: 19px;
     color: #1b3764;
     font-weight: 200;
+    list-style-image: url(../../assets/dot-svgrepo-com.svg);
   }
 }
 </style>

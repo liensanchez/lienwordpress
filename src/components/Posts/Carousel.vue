@@ -1,0 +1,87 @@
+<script setup>
+import { ref, defineProps, onMounted } from "vue";
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+// import required modules
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+
+const props = defineProps(["images"]);
+
+onMounted(() => {
+    console.log(props.images);
+});
+
+const thumbsSwiper = ref();
+
+const setThumbsSwiper = (swiper) => {
+    thumbsSwiper.value = swiper;
+};
+
+const modules = ref([FreeMode, Navigation, Thumbs]);
+</script>
+
+<template>
+    <div class="thumbscarousel-container">
+        <swiper
+            :style="{
+                '--swiper-navigation-color': '#fff',
+                '--swiper-pagination-color': '#fff',
+            }"
+            :spaceBetween="10"
+            :navigation="true"
+            :thumbs="{ swiper: thumbsSwiper }"
+            :modules="modules"
+            class="mySwiperBig"
+        >
+            <swiper-slide v-for="image in props.images" :key="image">
+                <img :src="image" />
+            </swiper-slide>
+        </swiper>
+        <swiper
+            @swiper="setThumbsSwiper"
+            :spaceBetween="10"
+            :slidesPerView="4"
+            :watchSlidesProgress="true"
+            :grabCursor="true"
+            :modules="modules"
+            class="mySwiperSmall"
+        >
+            <swiper-slide
+                v-for="image in props.images"
+                :key="image"
+            >
+                <img :src="image" />
+            </swiper-slide>
+        </swiper>
+    </div>
+</template>
+
+<style lang="scss">
+.thumbscarousel-container {
+    width: 40%;
+
+    .mySwiperBig {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .mySwiperSmall {
+        width: 100%;
+
+        img{
+            height:70px;
+            width:auto;
+        }
+    }
+}
+</style>

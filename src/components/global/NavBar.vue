@@ -64,7 +64,7 @@ export default {
 
         <div class="custom-container">
             <div class="navbar-left">
-                <div class="navbar-logo">
+                <a href="/" class="navbar-logo">
                     <svg
                         width="40"
                         height="40"
@@ -98,7 +98,7 @@ export default {
                         />
                     </svg>
                     <h1 class="navbar-title">Liendev</h1>
-                </div>
+                </a>
             </div>
 
             <button class="option-burger" @click="toggleMobile">
