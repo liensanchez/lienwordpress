@@ -32,7 +32,7 @@ export default {
             this.isLoading = false;
             try {
                 const response = await axios.get(
-                    "https://liendev.000webhostapp.com/wp-json/wp/v2/posts?_embed&acf_format=standard"
+                    "http://localhost/lienwordpress/index.php/wp-json/wp/v2/posts?_embed&acf_format=standard"
                 );
                 this.posts = response.data;
             } catch (error) {
@@ -41,6 +41,7 @@ export default {
                 this.isLoading = false;
             }
         },
+
     },
     mounted() {
         this.getPosts();
@@ -55,7 +56,6 @@ export default {
                 :titleTwo="this.ProjectTitle"
                 :style="this.ProjectTitleStyle"
             />
-
             <div class="projects-content">
                 <div class="projects-list" v-if="!this.isLoading">
                     <ProjectCard
@@ -73,9 +73,12 @@ export default {
 .projects-container {
     display: flex;
     justify-content: center;
+    margin: 100px 0;
 
     .projects-content {
+
         .projects-list {
+            padding-top: 50px 0;
             width: 100%;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));

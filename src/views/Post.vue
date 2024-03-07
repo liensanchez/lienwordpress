@@ -27,7 +27,7 @@ export default {
             this.isLoading = false;
             try {
                 const response = await axios.get(
-                    `https://liendev.000webhostapp.com/wp-json/wp/v2/posts/${postId}?_embed&acf_format=standard`
+                    `http://localhost/lienwordpress/index.php/wp-json/wp/v2/posts/${postId}?_embed&acf_format=standard`
                 );
                 this.post = response.data;
                 console.log(this.post);

@@ -77,10 +77,10 @@ const modules = ref([FreeMode, Navigation, Thumbs]);
 
     .mySwiperSmall {
         width: 100%;
+        height: 100px;
 
-        img{
-            height:70px;
-            width:auto;
+        img {
+            width: 100%;
         }
     }
 }

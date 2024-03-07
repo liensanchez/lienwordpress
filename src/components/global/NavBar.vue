@@ -54,14 +54,13 @@ export default {
                 </button>
             </div>
 
-            <div class="option-button">About Me</div>
-            <div class="option-button">Technologies</div>
-            <div class="option-button">Projects</div>
-            <div class="option-button">
+            <a href="/#about" class="option-button">About Me</a>
+            <a href="/#technologies" class="option-button">Technologies</a>
+            <a href="/#projects" class="option-button">Projects</a>
+            <a href="/#contact"  class="option-button">
                 <ButtonSmall :buttonText="'Contact'" :style="style" />
-            </div>
+            </a>
         </div>
-
         <div class="custom-container">
             <div class="navbar-left">
                 <a href="/" class="navbar-logo">
@@ -126,12 +125,12 @@ export default {
             </button>
 
             <div class="navbar-options">
-                <div class="option-button">About Me</div>
-                <div class="option-button">Projects</div>
-                <div class="option-button">Technologies</div>
-                <div class="option-button">
+                <a href="/#about" class="option-button">About Me</a>
+                <a href="/#projects" class="option-button">Projects</a>
+                <a href="/#technologies" class="option-button">Technologies</a>
+                <a href="/#contact" class="option-button">
                     <ButtonSmall :buttonText="'Contact'" :style="style" />
-                </div>
+                </a>
             </div>
         </div>
     </div>

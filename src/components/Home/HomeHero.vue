@@ -43,7 +43,7 @@ export default {
                     />
                     <Paragraph :text="this.HeroText" />
 
-                    <a href="#">
+                    <a href="/#contact" >
                         <ButtonSmall
                             :buttonText="HeroButton"
                             :style="HeroButtonStyle"

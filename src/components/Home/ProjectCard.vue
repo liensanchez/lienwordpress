@@ -20,9 +20,6 @@ export default {
         Swiper,
         SwiperSlide,
     },
-    mounted() {
-        console.log(this.project);
-    },
     setup() {
         return {
             modules: [Pagination, Navigation],
@@ -45,7 +42,7 @@ export default {
             </swiper-slide>
         </swiper>
 
-        <div>
+        <div class="project-card-title">
             <h1>{{ this.project.title.rendered }}</h1>
         </div>
 
@@ -145,14 +142,18 @@ export default {
         }
     }
 
+    .project-card-title {
+        margin-top: 15px;
+    }
+
     .project-card-links {
+        margin-top: 15px;
         width: 100%;
         display: flex;
         justify-content: space-evenly;
         gap: 50px;
 
         button {
-            heigth: 50px;
             width: 50px;
             cursor: pointer;
             background: none;
