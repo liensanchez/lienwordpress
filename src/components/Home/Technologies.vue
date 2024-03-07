@@ -20,13 +20,27 @@ export default {
     },
     methods: {
         async getTechnologies() {
-            this.isLoading = false;
             try {
                 const response = await axios.get(
+                    /* "http://lienvue.byethost4.com/wp-json/wp/v2/technologies?_embed&acf_format=standard" */
                     "http://localhost/lienwordpress/index.php/wp-json/wp/v2/technologies?_embed&acf_format=standard"
                 );
                 this.technologies = response.data;
-                console.log(this.technologies[0].acf.technologies_images);
+                console.log(this.technologies);
+                this.isLoading = false;
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+        async getTechnologiesss() {
+            try {
+                const response = await axios.get(
+                    "http://lienvue.byethost4.com/wp-json/wp/v2/technologies?_embed&acf_format=standard"
+                    /* "http://localhost/lienwordpress/index.php/wp-json/wp/v2/technologies?_embed&acf_format=standard" */
+                );
+                console.log(response);
             } catch (error) {
                 console.error("Error fetching posts:", error);
             } finally {
@@ -36,6 +50,7 @@ export default {
     },
     mounted() {
         this.getTechnologies();
+        this.getTechnologiesss();
     },
     setup() {
         const progressCircle = ref(null);
@@ -56,7 +71,7 @@ export default {
 
 <template>
     <div class="technologies-container">
-        <div class="custom-container" v-if="this.technologies.length > 0">
+        <div class="custom-container" v-if="!this.isLoading">
             <swiper
                 :slidesPerView="8"
                 :spaceBetween="30"
@@ -73,7 +88,9 @@ export default {
                     v-for="image in this.technologies[0].acf
                         .technologies_images"
                 >
-                    <img :src="image" alt="" />
+                    <div class="single-technology">
+                        <img :src="image" alt="" />
+                    </div>
                 </swiper-slide>
                 <div class="autoplay-progress">
                     <svg viewBox="0 0 48 48" ref="progressCircle">
@@ -95,11 +112,17 @@ export default {
     .swiper-technologies {
         height: 150px;
 
-        img {
-            width: 100%;
-            max-height: 150px;
+        .single-technology {
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                max-height: 150px;
+            }
         }
     }
 }
 </style>
-import { Axios } from 'axios';
