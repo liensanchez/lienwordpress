@@ -26,10 +26,7 @@ export default {
         async getPost(postId) {
             this.isLoading = false;
             try {
-                const response = await axios.get(
-                    `https://liendev3.wpcomstaging.com/wp-json/wp/v2/posts/${postId}?_embed&acf_format=standard`
-                    /* `http://localhost/lienwordpress/index.php/wp-json/wp/v2/posts/${postId}?_embed&acf_format=standard` */
-                );
+                const response = await axios.get(process.env.VUE_APP_HERO);
                 this.post = response.data;
                 console.log(this.post);
             } catch (error) {
