@@ -96,7 +96,7 @@ export default {
                             stroke-linejoin="round"
                         />
                     </svg>
-                    <h1 class="navbar-title">Liendev</h1>
+                    <h1 class="navbar-title">Liensdev</h1>
                 </a>
             </div>
 

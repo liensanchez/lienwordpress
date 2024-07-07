@@ -24,7 +24,7 @@ export default {
         <NavBar />
         <HomeHero id="about"/>
         <Projects id="projects"/>
-        <Technologies id="technologies"/>
+<!--         <Technologies id="technologies"/> -->
         <Contact id="contact"/>
         <Footer />
     </div>

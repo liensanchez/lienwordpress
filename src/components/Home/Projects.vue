@@ -31,10 +31,7 @@ export default {
         async getPosts() {
             this.isLoading = false;
             try {
-                const response = await axios.get(
-                    "https://liendev3.wpcomstaging.com/wp-json/wp/v2/posts?_embed&acf_format=standard"
-                    /* "http://localhost/lienwordpress/index.php/wp-json/wp/v2/posts?_embed&acf_format=standard" */
-                );
+                const response = await axios.get(process.env.VUE_APP_PROJECTS);
                 this.posts = response.data;
             } catch (error) {
                 console.error("Error fetching posts:", error);

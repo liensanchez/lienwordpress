@@ -36,7 +36,7 @@
                                 stroke-linejoin="round"
                             />
                         </svg>
-                        <h1 class="footer-logo-title">Liendev</h1>
+                        <h1 class="footer-logo-title">Liensdev</h1>
                     </div>
                 </div>
 
