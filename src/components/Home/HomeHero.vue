@@ -43,7 +43,7 @@ export default {
                     />
                     <Paragraph :text="this.HeroText" />
 
-                    <a href="/#contact" >
+                    <a href="/#contact">
                         <ButtonSmall
                             :buttonText="HeroButton"
                             :style="HeroButtonStyle"
@@ -124,12 +124,20 @@ export default {
     }
 
     @media (max-width: 1200px) {
+        padding: 0 0 25px;
+
         .home-hero-content {
             flex-direction: column-reverse;
+            gap: 20px;
+
+            .profile-image {
+                margin-top: -55px;
+            }
 
             .home-hero-info {
                 text-align: center;
                 align-items: center;
+                gap: 10px;
 
                 .mobile-book {
                     display: flex;

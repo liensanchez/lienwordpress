@@ -16,7 +16,7 @@ export default {
     },
     data() {
         return {
-            titleSection: "Write us a message!",
+            titleSection: "Write me a message!",
             titleColor: {
                 color: "#1B3764",
             },

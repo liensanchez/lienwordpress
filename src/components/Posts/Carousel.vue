@@ -73,6 +73,21 @@ const modules = ref([FreeMode, Navigation, Thumbs]);
             width: 100%;
             height: auto;
         }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 48px;
+            height: 48px;
+            border-radius: 48px;
+            background-color: #1b3764;
+            color: #FFCA42;
+            font-size: 32px;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 24px;
+        }        
     }
 
     .mySwiperSmall {
@@ -82,6 +97,10 @@ const modules = ref([FreeMode, Navigation, Thumbs]);
         img {
             width: 100%;
         }
+    }
+
+    @media (max-width: 1200px) {
+        width: 100%;
     }
 }
 </style>

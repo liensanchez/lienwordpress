@@ -276,6 +276,7 @@ export default {
             background-color: rgba(0, 0, 0, 0.7);
             width: 100%;
             height: 100%;
+            z-index: 100;
 
             .close-container {
                 width: 90%;

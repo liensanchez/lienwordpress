@@ -33,13 +33,13 @@ export default {
             try {
                 const response = await axios.get(process.env.VUE_APP_PROJECTS);
                 this.posts = response.data;
+                console.log(response);
             } catch (error) {
                 console.error("Error fetching posts:", error);
             } finally {
                 this.isLoading = false;
             }
         },
-
     },
     mounted() {
         this.getPosts();
@@ -74,13 +74,24 @@ export default {
     margin: 100px 0;
 
     .projects-content {
-
         .projects-list {
             padding-top: 50px 0;
             width: 100%;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
             grid-gap: 20px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        margin: 50px 0;
+
+        .projects-content {
+            .projects-list {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }
