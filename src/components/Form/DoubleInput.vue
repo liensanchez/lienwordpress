@@ -1,4 +1,9 @@
-<script>
+<template>
+  <div>
+      
+  </div>
+</template>
+<!-- <script>
 export default {
   props: {
     valueOne: String,
@@ -94,3 +99,4 @@ export default {
   }
 }
 </style>
+ -->

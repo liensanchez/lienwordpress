@@ -1,4 +1,9 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
+<!-- <script>
 import Titles from "../global/Titles.vue";
 import Paragraph from "../global/Paragraph.vue";
 import ButtonSmall from "@/components/global/ButtonSmall.vue";
@@ -159,3 +164,4 @@ export default {
     }
 }
 </style>
+ -->

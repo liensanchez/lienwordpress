@@ -1,4 +1,9 @@
 <template>
+  <div>
+      
+  </div>
+</template>
+<!-- <template>
   <div class="single-content">
     <svg
       width="24"
@@ -44,3 +49,4 @@
   }
 }
 </style>
+ -->

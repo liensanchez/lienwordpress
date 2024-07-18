@@ -1,4 +1,9 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
+<!-- <script>
 import axios from "axios";
 import { ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -112,3 +117,4 @@ export default {
     }
 }
 </style>
+ -->

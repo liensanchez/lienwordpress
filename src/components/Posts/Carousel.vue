@@ -1,4 +1,9 @@
-<script setup>
+<template>
+    <div>
+        
+    </div>
+</template>
+<!-- <script setup>
 import { ref, defineProps, onMounted } from "vue";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -104,3 +109,4 @@ const modules = ref([FreeMode, Navigation, Thumbs]);
     }
 }
 </style>
+ -->

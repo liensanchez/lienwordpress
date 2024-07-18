@@ -1,4 +1,9 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
+<!-- <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
@@ -235,3 +240,4 @@ export default {
     }
 }
 </style>
+ -->

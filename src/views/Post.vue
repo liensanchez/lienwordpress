@@ -1,4 +1,9 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
+<!-- <script>
 import axios from "axios";
 import NavBar from "@/components/global/NavBar.vue";
 import Hero from "@/components/global/Hero.vue";
@@ -52,7 +57,7 @@ export default {
         <NavBar />
         <Hero v-if="!this.isLoading" :heroTitle="this.post.title.rendered" />
         <!-- :heroText="this.post.excerpt.rendered" -->
-        <div class="project-info-container" v-if="!this.isLoading">
+<!--         <div class="project-info-container" v-if="!this.isLoading">
             <div class="custom-container">
                 <div class="project-info-content">
                     <Carousel :images="this.post.acf.carousel_images" />
@@ -222,3 +227,4 @@ export default {
     }
 }
 </style>
+ -->

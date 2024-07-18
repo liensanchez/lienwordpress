@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-light-blue: #64ccc5;
+    --color-dark: #0c0c0c;
+    --color-dark-opacity: #0c0c0ce6;
+    --color-light: #fbfbfb;
+    --color-light-alt: #f4f4f4;
+    --color-grey: #dfdfdf;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    background-color: var(--color-dark);
+}
+
+#app {
+    background-color: var(--color-light);
+}
+
+router-link,
+a {
+    text-decoration: none;
+}
+
+.custom-container {
+    margin: 0 auto;
+    width: 85%;
+    max-width: 1920px;
+
+    @media (max-width: 1200px) {
+        width: 90%;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto Serif", serif;
+}
+
+@mixin basic-btn($background, $padding, $color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background;
+    padding: $padding;
+    color: $color;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@mixin animation-btn($background, $padding, $color) {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    background: $background;
+    padding: $padding;
+    color: $color;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        color: $background;
+        background: $color;
+
+        svg {
+            circle {
+                fill: #fbfbfb;
+            }
+
+            path {
+                stroke: #0c0c0c;
+            }
+        }
+    }
+}

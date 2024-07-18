@@ -1,4 +1,10 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
+
+<!-- <script>
 import Title from "@/components/global/Titles.vue";
 import DoubleInput from "@/components/Form/DoubleInput.vue";
 import SingleInput from "@/components/Form/SingleInput.vue";
@@ -94,3 +100,4 @@ export default {
     }
 }
 </style>
+ -->

@@ -1,4 +1,9 @@
-<script>
+<template>
+    <div>
+        
+    </div>
+</template>
+<!-- <script>
 import axios from "axios";
 import Titles from "../global/Titles.vue";
 import Paragraph from "../global/Paragraph.vue";
@@ -96,3 +101,4 @@ export default {
     }
 }
 </style>
+ -->
