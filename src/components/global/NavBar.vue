@@ -59,8 +59,6 @@ export default {
                 <a class="header-btn-center" href="#">Home</a>
                 <a class="header-btn-center" href="#">About</a>
                 <a class="header-btn-center" href="#">Portfolio</a>
-            </div>
-            <div class="header-right">
                 <a class="header-btn-right" href="#">Contact</a>
             </div>
         </div>
@@ -88,13 +86,15 @@ header {
             gap: 30px;
 
             .header-btn-center {
-                @include basic-btn(var(--color-light), 5px, var(--color-dark))
+                @include basic-btn(var(--color-light), 5px, var(--color-dark));
             }
-        }
 
-        .header-right {
             .header-btn-right {
-                @include basic-btn(var(--color-dark), 5px 10px, var(--color-light))
+                @include basic-btn(
+                    var(--color-dark),
+                    5px 10px,
+                    var(--color-light)
+                );
             }
         }
     }

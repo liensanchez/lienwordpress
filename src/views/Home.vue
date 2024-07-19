@@ -20,8 +20,8 @@ export default {
 
 <template>
     <NavBar />
-    <!--         <HomeHero id="about"/>
-        <Projects id="projects"/>
+    <HomeHero id="about" />
+    <!--     <Projects id="projects"/>
         <Technologies id="technologies"/> 
         <Contact id="contact"/> -->
     <Footer />
