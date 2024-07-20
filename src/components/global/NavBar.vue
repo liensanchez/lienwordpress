@@ -92,7 +92,7 @@ header {
             .header-btn-right {
                 @include basic-btn(
                     var(--color-dark),
-                    5px 10px,
+                    5px 15px,
                     var(--color-light)
                 );
             }

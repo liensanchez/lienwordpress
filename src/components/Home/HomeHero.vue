@@ -21,23 +21,7 @@
                     passionate developer, I am the right candidate for you.
                 </p>
                 <button>
-                    <svg
-                        width="28"
-                        height="28"
-                        viewBox="0 0 28 28"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <circle cx="14" cy="14" r="14" fill="#0C0C0C" />
-                        <path
-                            d="M12 9L16.6667 13.6667L12 18.3333"
-                            stroke="#FBFBFB"
-                            stroke-width="1.55439"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                    Download CV
+                    Contact
                 </button>
             </div>
             <div class="hero-right">
@@ -45,6 +29,9 @@
                     <div class="ring-two">
                         <div class="ring-one">
                             <div class="img-holder">
+                                <div>
+                                    <p>holas</p>
+                                </div>
                                 <img src="@/assets/Lien.png" alt="" />
                             </div>
                         </div>
@@ -60,7 +47,10 @@
 
 .hero {
     padding: 50px 0;
-    background-color: var(--color-dark);
+   /*  background-color: var(--color-dark); */
+   background-image: url('@/assets/test.png');
+   background-size: cover;
+   background-repeat: no-repeat;
 
     .hero-content {
         display: flex;
@@ -130,11 +120,7 @@
             }
 
             button {
-                @include animation-btn(
-                    var(--color-light),
-                    10px 20px,
-                    var(--color-light-blue)
-                );
+                @include basic-btn(var(--color-light-blue), 5px 20px, #fff);
             }
         }
 
