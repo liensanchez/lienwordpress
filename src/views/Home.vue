@@ -2,7 +2,7 @@
 import NavBar from "@/components/global/NavBar.vue";
 import HomeHero from "@/components/Home/HomeHero.vue";
 import Projects from "@/components/Home/Projects.vue";
-import Technologies from "@/components/Home/Technologies.vue";
+import Testimonials from "@/components/Home/Testimonials.vue";
 import Contact from "@/components/Home/Contact.vue";
 import Footer from "@/components/global/Footer.vue";
 
@@ -11,7 +11,7 @@ export default {
         NavBar,
         HomeHero,
         Projects,
-        Technologies,
+        Testimonials,
         Contact,
         Footer,
     },
@@ -21,6 +21,8 @@ export default {
 <template>
     <NavBar />
     <HomeHero id="about" />
+    <Projects id="projects"/>
+    <Testimonials />
     <!--     <Projects id="projects"/>
         <Technologies id="technologies"/> 
         <Contact id="contact"/> -->

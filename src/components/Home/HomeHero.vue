@@ -20,9 +20,7 @@
                     backgrounds. If you are looking for a talented and
                     passionate developer, I am the right candidate for you.
                 </p>
-                <button>
-                    Contact
-                </button>
+                <button>Contact</button>
             </div>
             <div class="hero-right">
                 <div class="ring-third">
@@ -47,10 +45,10 @@
 
 .hero {
     padding: 50px 0;
-   /*  background-color: var(--color-dark); */
-   background-image: url('@/assets/test.png');
-   background-size: cover;
-   background-repeat: no-repeat;
+    /*  background-color: var(--color-dark); */
+    background-image: url("@/assets/test.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .hero-content {
         display: flex;
@@ -80,6 +78,7 @@
                     h2 {
                         color: var(--color-light-blue);
                         font-size: 64px;
+                        white-space: nowrap;
                     }
 
                     .frontend {
@@ -120,7 +119,9 @@
             }
 
             button {
-                @include basic-btn(var(--color-light-blue), 5px 20px, #fff);
+                margin: 25px auto;
+                @include basic-btn(var(--color-light), 10px 25px, var(--color-dark));
+                border-radius: 8px;
             }
         }
 
@@ -142,12 +143,12 @@
                         .img-holder {
                             overflow: hidden;
                             height: 450px;
-                            width: auto;
+                            width: 450px;
                             border-radius: 100%;
                             background-color: rgb(100, 204, 197, 0.8);
 
                             img {
-                                margin-left: -25px;
+                                margin-left: -5px;
                                 margin-top: -30px;
                             }
                         }

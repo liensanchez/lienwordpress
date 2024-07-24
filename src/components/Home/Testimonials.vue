@@ -1,8 +1,43 @@
+<script>
+console.log("this working");
+</script>
 <template>
-    <div>
-        
-    </div>
+    <section class="testimonial custom-container">
+        <div class="testimonial-cards">
+            <div class="single-testimonial">
+                <img src="@/assets/Lien.png" alt="" />
+                <h2>Testimonial</h2>
+                <p>Name</p>
+                <span>Title</span>
+            </div>
+        </div>
+    </section>
 </template>
+
+<style lang="scss">
+.testimonial {
+    .testimonial-cards {
+        padding: 20px;
+        height: auto;
+        width: 100%;
+        border-radius: 20px;
+        background: var(--color-light-alt);
+
+        .single-testimonial {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            img {
+                width: 150px;
+                height: 150px;
+                border-radius: 150px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+</style>
 <!-- <script>
 import axios from "axios";
 import { ref } from "vue";
