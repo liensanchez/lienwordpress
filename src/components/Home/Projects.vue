@@ -24,6 +24,11 @@ export default {
             }
         },
     },
+    computed: {
+        limitedPosts() {
+            return this.posts.slice(0, 4);
+        },
+    },
     mounted() {
         this.getPosts();
     },
@@ -37,7 +42,7 @@ export default {
             <a
                 href="#"
                 class="showcase-project-card"
-                v-for="project in this.posts"
+                v-for="(project, index) in limitedPosts"
                 :key="project.id"
             >
                 <svg
@@ -93,12 +98,12 @@ export default {
 
     .showcase-projects-list {
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px; /* Adjust the gap as needed */
 
         .showcase-project-card {
-            background-color: var(--color-grey);
+            background: var(--color-light-alt);
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -111,11 +116,12 @@ export default {
             flex: 1 1 40%; /* Allow cards to wrap and take up 45% of the container */
 
             &:nth-child(odd) {
-                margin-top: 0;
+                margin-top: 0px;
             }
 
             &:nth-child(even) {
-                margin-top: 180px; /* Add margin-top to the second card in the row */
+                margin-top: 150px;
+                margin-bottom: -140px;
             }
 
             &:hover {
@@ -156,8 +162,8 @@ export default {
                 margin: -20px;
                 position: absolute;
                 z-index: 2;
-                height: 110%;
-                width: 110%;
+                height: 100%;
+                width: 100%;
                 opacity: 0;
                 background-color: rgb(0, 0, 0, 0.25);
                 backdrop-filter: blur(1px);
@@ -166,7 +172,7 @@ export default {
     }
 
     .showcase-see-more {
-        margin: 0 auto;
+        margin: 120px auto 0;
 
         @include basic-btn(var(--color-dark), 5px 25px, var(--color-light));
     }

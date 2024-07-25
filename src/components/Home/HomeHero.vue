@@ -45,8 +45,7 @@
 
 .hero {
     padding: 50px 0;
-    /*  background-color: var(--color-dark); */
-    background-image: url("@/assets/test.png");
+    background-image: url("@/assets/hero-background.png");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -120,7 +119,11 @@
 
             button {
                 margin: 25px auto;
-                @include basic-btn(var(--color-light), 10px 25px, var(--color-dark));
+                @include basic-btn(
+                    var(--color-light),
+                    10px 25px,
+                    var(--color-dark)
+                );
                 border-radius: 8px;
             }
         }
@@ -142,16 +145,109 @@
 
                         .img-holder {
                             overflow: hidden;
-                            height: 450px;
-                            width: 450px;
+                            max-height: 400px;
+                            max-width: 400px;
                             border-radius: 100%;
                             background-color: rgb(100, 204, 197, 0.8);
 
                             img {
-                                margin-left: -5px;
-                                margin-top: -30px;
+                                margin-left: -30px;
+                                margin-top: -50px;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1655px) {
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left-hero {
+                max-width: 65%;
+
+                h1 {
+                    font-size: 72px;
+                }
+
+                .dev-roles {
+                    gap: 15px;
+
+                    .text-container {
+                        height: 64px;
+                        gap: 15px;
+
+                        h2 {
+                            font-size: 64px;
+                        }
+                    }
+
+                    .text-static {
+                        font-size: 64px;
+                    }
+                }
+            }
+
+            .hero-right {
+                .ring-third {
+                    padding: 15px;
+
+                    .ring-two {
+                        padding: 15px;
+
+                        .ring-one {
+                            padding: 15px;
+
+                            .img-holder {
+                                height: 300px;
+                                width: 300px;
+
+                                img {
+                                    width: 300px;
+                                    height: 400px;
+                                    margin-left: -10px;
+                                    margin-top: -45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1360px) {
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left-hero {
+                h1 {
+                    font-size: 72px;
+                    text-align: center;
+                }
+
+                .dev-roles {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 15px;
+
+                    .text-container {
+                        height: 64px;
+                        gap: 15px;
+
+                        h2 {
+                            font-size: 64px;
+                        }
+                    }
+
+                    .text-static {
+                        font-size: 64px;
                     }
                 }
             }

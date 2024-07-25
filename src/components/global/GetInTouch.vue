@@ -1,0 +1,37 @@
+<template>
+    <section class="custom-container">
+        <div class="call-to-action">
+            <h2>Enough talk, let’s get to work</h2>
+            <a href="" class="get-in-touch">Get in touch</a>
+        </div>
+    </section>
+</template>
+
+<style scoped lang="scss">
+@import "@/assets/styles.scss";
+.call-to-action {
+    margin: 50px 0 75px;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 20px;
+    background-image: url("@/assets/CallToAction-bg.png");
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: var(--color-light);
+        text-align: center;
+        font-size: 45px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .get-in-touch {
+        @include basic-btn(var(--color-light), 10px 25px, var(--color-dark));
+    }
+}
+</style>

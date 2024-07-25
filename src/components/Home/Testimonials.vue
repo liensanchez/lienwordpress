@@ -1,27 +1,130 @@
 <script>
-console.log("this working");
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    data() {
+        return {
+            modules: [Autoplay, Pagination, Navigation],
+            navigation: {
+                prevEl: ".cards-button-prev",
+                nextEl: ".cards-button-next",
+            },
+        };
+    },
+};
 </script>
+
 <template>
     <section class="testimonial custom-container">
         <div class="testimonial-cards">
-            <div class="single-testimonial">
-                <img src="@/assets/Lien.png" alt="" />
-                <h2>Testimonial</h2>
-                <p>Name</p>
-                <span>Title</span>
+            <swiper
+                :slidesPerView="1"
+                :loop="true"
+                :modules="modules"
+                :navigation="navigation"
+                :autoplay="{
+                    delay: 4500,
+                    disableOnInteraction: false,
+                }"
+            >
+                <swiper-slide>
+                    <div class="single-testimonial">
+                        <img src="@/assets/Lien.png" alt="" />
+                        <h2>Testimonial</h2>
+                        <p>Name</p>
+                        <span>Title</span>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="single-testimonial">
+                        <img src="@/assets/Lien.png" alt="" />
+                        <h2>Testimonial2</h2>
+                        <p>Name2</p>
+                        <span>Title2</span>
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                    <div class="single-testimonial">
+                        <img src="@/assets/Lien.png" alt="" />
+                        <h2>Testimonial3</h2>
+                        <p>Name3</p>
+                        <span>Title3</span>
+                    </div>
+                </swiper-slide>
+            </swiper>
+            <div class="cards-control">
+                <button class="cards-button-prev">
+                    <svg
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 24.00 24.00"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="24" height="24" fill="none"></rect>
+                            <path
+                                d="M14.5 17L9.5 12L14.5 7"
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </g>
+                    </svg>
+                </button>
+                <button class="cards-button-next">
+                    <svg
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 24.00 24.00"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        transform="matrix(-1, 0, 0, 1, 0, 0)"
+                    >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <rect width="24" height="24" fill="none"></rect>
+                            <path
+                                d="M14.5 17L9.5 12L14.5 7"
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </g>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
+@import "@/assets/styles.scss";
 .testimonial {
     .testimonial-cards {
         padding: 20px;
         height: auto;
-        width: 100%;
         border-radius: 20px;
-        background: var(--color-light-alt);
+        background: var(--color-light-blue);
 
         .single-testimonial {
             display: flex;
@@ -36,120 +139,33 @@ console.log("this working");
             }
         }
     }
-}
-</style>
-<!-- <script>
-import axios from "axios";
-import { ref } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    data() {
-        return {
-            isLoading: true,
-            technologies: [],
-        };
-    },
-    methods: {
-        async getTechnologies() {
-            try {
-                const response = await axios.get(
-                    "https://liendev3.wpcomstaging.com/wp-json/wp/v2/technologies?_embed&acf_format=standard"
-                   /*  "http://localhost/lienwordpress/index.php/wp-json/wp/v2/technologies?_embed&acf_format=standard" */
-                );
-                this.technologies = response.data;
-                console.log(this.technologies);
-                this.isLoading = false;
-            } catch (error) {
-                console.error("Error fetching posts:", error);
-            } finally {
-                this.isLoading = false;
-            }
-        },
-    },
-    mounted() {
-        this.getTechnologies();
-    },
-    setup() {
-        const progressCircle = ref(null);
-        const progressContent = ref(null);
-        const onAutoplayTimeLeft = (s, time, progress) => {
-            progressCircle.value.style.setProperty("--progress", 1 - progress);
-            progressContent.value.textContent = `${Math.ceil(time / 1000)}s`;
-        };
-        return {
-            onAutoplayTimeLeft,
-            progressCircle,
-            progressContent,
-            modules: [Autoplay, Pagination, Navigation],
-        };
-    },
-};
-</script>
+    .cards-control {
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
 
-<template>
-    <div class="technologies-container">
-        <div class="custom-container" v-if="!this.isLoading">
-            <swiper
-                :slidesPerView="8"
-                :spaceBetween="30"
-                :autoplay="{
-                    delay: 1500,
-                    disableOnInteraction: false,
-                }"
-                :loop="true"
-                :modules="modules"
-                @autoplayTimeLeft="onAutoplayTimeLeft"
-                class="swiper-technologies"
-            >
-                <swiper-slide
-                    v-for="image in this.technologies[0].acf
-                        .technologies_images"
-                >
-                    <div class="single-technology">
-                        <img :src="image" alt="" />
-                    </div>
-                </swiper-slide>
-                <div class="autoplay-progress">
-                    <svg viewBox="0 0 48 48" ref="progressCircle">
-                        <circle cx="24" cy="24" r="20"></circle>
-                    </svg>
-                    <span ref="progressContent"></span>
-                </div>
-            </swiper>
-        </div>
-    </div>
-</template>
-
-<style lang="scss">
-.technologies-container {
-    margin: 100px 0;
-    display: flex;
-    justify-content: center;
-
-    .swiper-technologies {
-        height: 150px;
-
-        .single-technology {
-            height: 150px;
+        .cards-button-prev,
+        .cards-button-next {
+            @include animation-btn(var(--color-dark), 5px, var(--color-light));
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 100%;
+            border: solid 1px var(--color-dark);
+            overflow: hidden;
 
-            img {
-                width: 100%;
-                max-height: 150px;
+            svg {
+                path {
+                    stroke: var(--color-light);
+                }
+            }
+
+            &:focus {
+                border: solid 1px var(--color-dark);
             }
         }
     }
 }
 </style>
- -->
