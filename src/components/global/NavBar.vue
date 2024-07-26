@@ -16,7 +16,7 @@ export default {
 <template>
     <header>
         <div class="header-content custom-container">
-            <div class="header-left">
+            <a href="/" class="header-left">
                 <svg
                     width="40"
                     height="40"
@@ -50,17 +50,17 @@ export default {
                     />
                 </svg>
                 <h1 class="navbar-title">Liensdev</h1>
-            </div>
+            </a>
             <div
                 :class="{
                     'header-center': true,
                     'header-center-active': isActive,
                 }"
             >
-                <a class="header-btn-center" href="#">Home</a>
+                <a class="header-btn-center" href="/">Home</a>
                 <a class="header-btn-center" href="#">About</a>
                 <a class="header-btn-center" href="#">Portfolio</a>
-                <a class="header-btn-right" href="#">Contact</a>
+                <a class="header-btn-right" href="/contact">Contact</a>
             </div>
             <button class="mobile-menu" v-on:click="toggleMenu">
                 <svg
@@ -124,6 +124,9 @@ header {
         .header-left {
             display: flex;
             gap: 5px;
+            h1 {
+                color: var(--color-dark);
+            }
         }
 
         .header-center {
@@ -150,7 +153,6 @@ header {
 
     @media (max-width: 768px) {
         .header-content {
-            
             .header-left {
                 svg {
                     position: relative;

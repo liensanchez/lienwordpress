@@ -2,7 +2,7 @@
     <section class="custom-container">
         <div class="call-to-action">
             <h2>Enough talk, let’s get to work</h2>
-            <a href="" class="get-in-touch">Get in touch</a>
+            <a href="/contact" class="get-in-touch">Get in touch</a>
         </div>
     </section>
 </template>

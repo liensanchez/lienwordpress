@@ -2,7 +2,7 @@
     <footer>
         <div class="footer-content custom-container">
             <div class="footer-top">
-                <div class="footer-left">
+                <a href="/" class="footer-left">
                     <svg
                         width="40"
                         height="40"
@@ -36,15 +36,15 @@
                         />
                     </svg>
                     <h1 class="footer-title">Liensdev</h1>
-                </div>
+                </a>
 
                 <div class="footer-center">
                     <div class="left-column">
                         <h2>Pages</h2>
-                        <a href="">Home</a>
+                        <a href="/">Home</a>
                         <a href="">About</a>
                         <a href="">Portfolio</a>
-                        <a href="">Contact</a>
+                        <a href="/contact">Contact</a>
                     </div>
                     <div class="right-column">
                         <h2>Utility</h2>
@@ -273,9 +273,11 @@ footer {
     }
 
     @media (max-width: 768px) {
+        padding: 50px 0 60px;
         .footer-content {
             .footer-top {
                 flex-direction: column;
+                gap: 50px;
             }
 
             .footer-bottom {

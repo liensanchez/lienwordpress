@@ -20,7 +20,7 @@
                     backgrounds. If you are looking for a talented and
                     passionate developer, I am the right candidate for you.
                 </p>
-                <button>Contact</button>
+                <a href="/contact">Contact</a>
             </div>
             <div class="hero-right">
                 <div class="ring-third">
@@ -117,13 +117,14 @@
                 font-size: 24px;
             }
 
-            button {
+            a {
                 margin: 25px auto;
                 @include basic-btn(
                     var(--color-light),
                     10px 25px,
                     var(--color-dark)
                 );
+                max-width: 70px;
                 border-radius: 8px;
             }
         }
