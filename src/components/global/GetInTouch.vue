@@ -15,6 +15,8 @@
     border-radius: 20px;
     padding: 20px;
     background-image: url("@/assets/CallToAction-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -32,6 +34,12 @@
 
     .get-in-touch {
         @include basic-btn(var(--color-light), 10px 25px, var(--color-dark));
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 24px;
+        }
     }
 }
 </style>

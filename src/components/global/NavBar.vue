@@ -2,16 +2,12 @@
 export default {
     data() {
         return {
-            menuDropdown: false,
-            menuMobile: false,
+            isActive: false,
         };
     },
     methods: {
         toggleMenu() {
-            this.menuDropdown = !this.menuDropdown;
-        },
-        toggleMobile() {
-            this.menuMobile = !this.menuMobile;
+            this.isActive = !this.isActive;
         },
     },
 };
@@ -55,12 +51,61 @@ export default {
                 </svg>
                 <h1 class="navbar-title">Liensdev</h1>
             </div>
-            <div class="header-center">
+            <div
+                :class="{
+                    'header-center': true,
+                    'header-center-active': isActive,
+                }"
+            >
                 <a class="header-btn-center" href="#">Home</a>
                 <a class="header-btn-center" href="#">About</a>
                 <a class="header-btn-center" href="#">Portfolio</a>
                 <a class="header-btn-right" href="#">Contact</a>
             </div>
+            <button class="mobile-menu" v-on:click="toggleMenu">
+                <svg
+                    v-if="!isActive"
+                    fill="#000000"
+                    width="48px"
+                    height="48px"
+                    viewBox="0 0 1920 1920"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M1920 1468.412v112.94H0v-112.94h1920Zm0-564.706v112.941H0V903.706h1920ZM1920 339v112.941H0V339h1920Z"
+                            fill-rule="evenodd"
+                        ></path>
+                    </g>
+                </svg>
+                <svg
+                    v-else
+                    fill="#000000"
+                    width="48px"
+                    height="48px"
+                    viewBox="0 0 1920 1920"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M1827.701 0 960.065 867.636 92.3 0 0 92.168l867.636 867.767L0 1827.57 92.299 1920l867.766-867.766L1827.701 1920l92.168-92.43-867.635-867.635 867.635-867.767z"
+                            fill-rule="evenodd"
+                        ></path>
+                    </g>
+                </svg>
+            </button>
         </div>
     </header>
 </template>
@@ -95,6 +140,54 @@ header {
                     5px 15px,
                     var(--color-light)
                 );
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-content {
+            
+            .header-left {
+                svg {
+                    position: relative;
+                    z-index: 15;
+                }
+                h1 {
+                    font-size: 28px;
+                    position: relative;
+                    z-index: 15;
+                }
+            }
+            .header-center {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                z-index: 10;
+                background-color: var(--color-light);
+                left: 0;
+                top: -100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: top 0.5s ease;
+            }
+
+            .header-center-active {
+                top: 0;
+            }
+
+            .mobile-menu {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                background: none;
+                z-index: 15;
             }
         }
     }

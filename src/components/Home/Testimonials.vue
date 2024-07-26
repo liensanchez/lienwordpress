@@ -31,34 +31,34 @@ export default {
                 :modules="modules"
                 :navigation="navigation"
                 :autoplay="{
-                    delay: 4500,
+                    delay: 7500,
                     disableOnInteraction: false,
                 }"
             >
                 <swiper-slide>
                     <div class="single-testimonial">
-                        <img src="@/assets/Lien.png" alt="" />
-                        <h2>Testimonial</h2>
-                        <p>Name</p>
-                        <span>Title</span>
+                        <img src="@/assets/juli.jpeg" alt="" />
+                        <h2>I highly recommend Lien Silvio Sanchez for his commitment, passion and exceptional skills. We worked together on the development of a blockchain in Hyperledger Fabric. Lien always strives to achieve project objectives, showing an admirable and contagious dedication. He stands out for his ability to learn quickly, mastering new concepts and technologies. In addition, he is a creative and proactive thinker, constantly providing innovative ideas and solutions to improve the project. Do not hesitate to contact me for more details about our experience developing together.</h2>
+                        <p>Julián María Castro</p>
+                        <span>Middleware Dev</span>
                     </div>
                 </swiper-slide>
                 <swiper-slide>
                     <div class="single-testimonial">
-                        <img src="@/assets/Lien.png" alt="" />
-                        <h2>Testimonial2</h2>
-                        <p>Name2</p>
-                        <span>Title2</span>
+                        <img src="@/assets/caro.jpeg" alt="" />
+                        <h2>Meeting Lien was a continuous learning of kindness, attention, responsibility and organization. During our time together at Henry, he always demonstrated a strong commitment to his work and an exceptional ability to stay on top of details and meet deadlines. His proactive approach and willingness to help others were a differential. I feel fortunate to have had the opportunity to work with Lien and know she would be a valuable addition to any organization.</h2>
+                        <p>Carolina Ramirez</p>
+                        <span>Front End Dev</span>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
+<!--                 <swiper-slide>
                     <div class="single-testimonial">
                         <img src="@/assets/Lien.png" alt="" />
                         <h2>Testimonial3</h2>
                         <p>Name3</p>
                         <span>Title3</span>
                     </div>
-                </swiper-slide>
+                </swiper-slide> -->
             </swiper>
             <div class="cards-control">
                 <button class="cards-button-prev">
@@ -124,7 +124,7 @@ export default {
         padding: 20px;
         height: auto;
         border-radius: 20px;
-        background: var(--color-light-blue);
+        background: var(--color-light-alt);
 
         .single-testimonial {
             display: flex;
@@ -136,6 +136,11 @@ export default {
                 height: 150px;
                 border-radius: 150px;
                 object-fit: cover;
+            }
+
+            h2 {
+                margin: 25px 0;
+                text-align: center;
             }
         }
     }
@@ -164,6 +169,17 @@ export default {
 
             &:focus {
                 border: solid 1px var(--color-dark);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .testimonial-cards {
+            .single-testimonial {
+                h2 {
+                    margin: 5px 0;
+                    font-size: 16px;
+                }
             }
         }
     }

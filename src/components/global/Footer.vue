@@ -271,5 +271,25 @@ footer {
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                a {
+                    @include basic-btn(
+                        var(--color-light),
+                        5px 15px,
+                        var(--color-dark)
+                    );
+                    width: 32px;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
 }
 </style>

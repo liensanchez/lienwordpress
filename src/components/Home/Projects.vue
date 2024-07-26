@@ -103,7 +103,7 @@ export default {
         gap: 30px; /* Adjust the gap as needed */
 
         .showcase-project-card {
-            background: var(--color-light-alt);
+            /* background: var(--color-light-alt); */
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -175,6 +175,51 @@ export default {
         margin: 120px auto 0;
 
         @include basic-btn(var(--color-dark), 5px 25px, var(--color-light));
+    }
+
+    @media (max-width: 768px) {
+        padding: 45px 0;
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .showcase-projects-list {
+            display: flex;
+            flex-direction: column;
+
+            .showcase-project-card {
+                padding: 10px;
+                gap: 5px;
+
+                .showcase-card-img {
+                    background-size: cover;
+                    height: 240px;
+                }
+
+                &:nth-child(odd) {
+                    margin-top: 0px;
+                }
+
+                &:nth-child(even) {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+
+                    .arrow,
+                    .dark-bg {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .showcase-see-more {
+            margin: 0 auto;
+        }
     }
 }
 </style>

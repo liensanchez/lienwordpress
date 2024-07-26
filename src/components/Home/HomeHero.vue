@@ -253,5 +253,79 @@
             }
         }
     }
+
+    @media (max-width: 768px) {
+        .hero-content {
+            flex-direction: column-reverse;
+
+            .left-hero {
+                max-width: 100%;
+                h1 {
+                    font-size: 48px;
+                }
+
+                .dev-roles {
+
+                    .text-container {
+                        height: 36px;
+
+                        h2 {
+                            color: var(--color-light-blue);
+                            font-size: 36px;
+                            white-space: nowrap;
+                        }
+
+                        .frontend {
+                            margin-top: 0; // Start from the default position
+                            animation: moveUp 8s infinite; // Apply the animation and make it infinite
+
+                            // Keyframes for the animation
+                            @keyframes moveUp {
+                                0%,
+                                20% {
+                                    margin-top: 0; // Start with the first title and stay for 2 seconds (20% of 6s = 1.2s)
+                                }
+                                33%,
+                                53% {
+                                    margin-top: -55px; // Show the second title and stay for 2 seconds
+                                }
+                                66%,
+                                86% {
+                                    margin-top: -115px; // Show the third title and stay for 2 seconds
+                                }
+                                100% {
+                                    margin-top: 0; // Loop back to the first title
+                                }
+                            }
+                        }
+                    }
+
+                    .text-static {
+                        font-size: 36px;
+                    }
+                }
+            }
+
+            .hero-right {
+                .ring-third {
+                    .ring-two {
+                        .ring-one {
+                            .img-holder {
+                                height: 250px;
+                                width: 250px;
+
+                                img {
+                                    width: 250px;
+                                    height: 350px;
+                                    margin-left: -5px;
+                                    margin-top: -45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 </style>

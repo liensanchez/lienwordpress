@@ -21,7 +21,7 @@ export default {
 <template>
     <NavBar />
     <HomeHero id="about" />
-    <Projects id="projects"/>
+    <Projects id="projects" />
     <Testimonials />
     <GetInTouch />
     <Footer />
