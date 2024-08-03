@@ -1,7 +1,53 @@
+<script>
+import axios from "axios";
+import NavBar from "@/components/global/NavBar.vue";
+import Hero from "@/components/Posts/Hero.vue";
+import Footer from "@/components/global/Footer.vue";
+
+export default {
+    components: {
+        NavBar,
+        Hero,
+        Footer,
+    },
+    data() {
+        return {
+            posts: [],
+            isLoading: true,
+            imageUrls: [],
+        };
+    },
+    methods: {
+        async getPosts(postId) {
+            /* this.isLoading = false; */
+            try {
+                const response = await axios.get(process.env.VUE_APP_SINGLEPROJECT+postId+'?acf_format=standard');
+                this.posts = response.data;
+                this.imageUrls = response.data.acf.carousel_images;
+                console.log(this.imageUrls)
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            } finally {
+                /* this.isLoading = false; */
+            }
+        },
+    },
+    mounted() {
+        const postId = this.$route.params.id;
+        console.log(postId)
+        this.getPosts(postId)
+        /* this.getPost(postId); */
+    }, 
+};
+</script>
+
 <template>
+    <NavBar />
+    <Hero :imageUrls="imageUrls" />
     <div>
-        
+        <h1>This is a post</h1>
     </div>
+    <Footer/>
 </template>
 <!-- <script>
 import axios from "axios";
