@@ -1352,6 +1352,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/styles.scss";
 .hero {
+
     .hero-carousel {
         display: flex;
         align-items: center;
@@ -1418,6 +1419,7 @@ export default {
     } */
 
     @media (max-width: 768px) {
+        margin-top: 68px;
         .testimonial-cards {
             .single-testimonial {
                 h2 {

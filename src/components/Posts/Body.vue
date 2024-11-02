@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-    <section class="body custom-container">
+    <section class="body-post custom-container">
         <h1>{{ post_content?.title?.rendered || "Loading..." }}</h1>
         <div v-if="post_content" v-html="renderedContent"></div>
         <div v-else>Loading content...</div>
@@ -26,8 +26,13 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h1 {
-    text-align: center;
-    font-size: 64px;
+.body-post {
+    padding: 40px 10px;
+    h1 {
+        text-align: center;
+        font-size: 64px;
+        margin-bottom: 30px;
+    }
 }
+
 </style>
