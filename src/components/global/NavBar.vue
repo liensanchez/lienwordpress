@@ -153,17 +153,17 @@ header {
 
     @media (max-width: 768px) {
         .header-content {
+            width: 100%;
+            top: 0;
+            position: fixed;
+            background-color: var(--color-light);
+            z-index: 15;
+
             .header-left {
-                svg {
-                    position: relative;
-                    z-index: 15;
-                }
-                h1 {
-                    font-size: 28px;
-                    position: relative;
-                    z-index: 15;
-                }
+                padding: 20px 25px;
+                z-index: 15;
             }
+
             .header-center {
                 position: absolute;
                 width: 100vw;
@@ -171,7 +171,7 @@ header {
                 z-index: 10;
                 background-color: var(--color-light);
                 left: 0;
-                top: -100%;
+                top: -100vh;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -190,6 +190,7 @@ header {
                 border: none;
                 background: none;
                 z-index: 15;
+                padding: 20px 25px;
             }
         }
     }
