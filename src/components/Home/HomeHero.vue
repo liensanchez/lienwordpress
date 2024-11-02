@@ -44,10 +44,15 @@
 @import "@/assets/styles.scss";
 
 .hero {
-    padding: 50px 0;
+    min-height: 90vh;
+    /* padding: 50px 0; */
     background-image: url("@/assets/hero-background.png");
     background-size: cover;
     background-repeat: no-repeat;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .hero-content {
         display: flex;

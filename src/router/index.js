@@ -4,6 +4,7 @@ import Post from "../views/Post.vue";
 import Contact from "../views/Contact.vue";
 import NotFound from '../views/NotFound.vue';
 import Style from '../views/Style.vue';
+import Portfolio from '../views/Portfolio.vue';
 
 const routes = [
     {
@@ -15,6 +16,11 @@ const routes = [
         path: "/style",
         name: "style",
         component: Style,
+    },
+    {
+        path: "/portfolio",
+        name: "portfolio",
+        component: Portfolio,
     },
     {
         path: "/project/:id",

@@ -74,7 +74,7 @@ export default {
             </a>
         </div>
 
-        <a href="#" class="showcase-see-more">See more projects</a>
+        <a :href="`/portfolio`" class="showcase-see-more">See more projects</a>
     </section>
 </template>
 
@@ -158,6 +158,7 @@ export default {
             }
 
             .dark-bg {
+                border-radius: 20px;
                 margin: -20px;
                 position: absolute;
                 z-index: 2;
@@ -188,7 +189,7 @@ export default {
             flex-direction: column;
 
             .showcase-project-card {
-                padding: 10px;
+                /* padding: 10px; */
                 gap: 5px;
 
                 .showcase-card-img {

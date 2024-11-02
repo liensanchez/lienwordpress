@@ -3,6 +3,7 @@ import axios from "axios";
 import NavBar from "@/components/global/NavBar.vue";
 import Hero from "@/components/Posts/Hero.vue";
 import Body from "@/components/Posts/Body.vue";
+import OtherProjects from "@/components/Posts/OtherProjects.vue";
 import Footer from "@/components/global/Footer.vue";
 
 export default {
@@ -10,6 +11,7 @@ export default {
         NavBar,
         Hero,
         Body,
+        OtherProjects,
         Footer,
     },
     data() {
@@ -64,5 +66,6 @@ export default {
         :project_type="project_type"
     />
     <Body :post_content="post_content" />
+    <!-- <OtherProjects /> -->
     <Footer /> 
 </template>
