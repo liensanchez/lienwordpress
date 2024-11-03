@@ -39,7 +39,7 @@ export default {
         <h2>Recent Showcase</h2>
         <div class="showcase-projects-list" v-if="!this.isLoading">
             <a
-                :href="`/project/${project.id}`"
+                :href="`/project/${project.slug}/${project.id}`"
                 class="showcase-project-card"
                 v-for="(project, index) in limitedPosts"
                 :key="project.id"
