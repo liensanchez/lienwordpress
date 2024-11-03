@@ -59,15 +59,15 @@ export default {
             >
                 <a class="header-btn-center" href="/">Home</a>
                 <a class="header-btn-center" href="#">About</a>
-                <a class="header-btn-center" href="#">Portfolio</a>
+                <a class="header-btn-center" href="/portfolio">Portfolio</a>
                 <a class="header-btn-right" href="/contact">Contact</a>
             </div>
             <button class="mobile-menu" v-on:click="toggleMenu">
                 <svg
                     v-if="!isActive"
                     fill="#000000"
-                    width="48px"
-                    height="48px"
+                    width="40"
+                    height="40"
                     viewBox="0 0 1920 1920"
                     xmlns="http://www.w3.org/2000/svg"
                 >
@@ -87,8 +87,8 @@ export default {
                 <svg
                     v-else
                     fill="#000000"
-                    width="48px"
-                    height="48px"
+                    width="40"
+                    height="40"
                     viewBox="0 0 1920 1920"
                     xmlns="http://www.w3.org/2000/svg"
                 >

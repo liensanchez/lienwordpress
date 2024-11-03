@@ -66,6 +66,6 @@ export default {
         :project_type="project_type"
     />
     <Body :post_content="post_content" />
-    <!-- <OtherProjects /> -->
+    <OtherProjects /> 
     <Footer /> 
 </template>

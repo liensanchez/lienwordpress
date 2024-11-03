@@ -1352,7 +1352,6 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/styles.scss";
 .hero {
-
     .hero-carousel {
         display: flex;
         align-items: center;
@@ -1419,15 +1418,28 @@ export default {
     } */
 
     @media (max-width: 768px) {
-        margin-top: 68px;
-        .testimonial-cards {
-            .single-testimonial {
-                h2 {
-                    margin: 5px 0;
-                    font-size: 16px;
-                }
+        margin-top: 48px;
+        .hero-links-container {
+        .hero-link {
+            border-radius: 15px;
+            padding: 10px;
+            background-color: var(--color-dark);
+            margin-top: -25px;
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+
+            a,
+            p {
+                font-size: 12px;
+            }
+
+            img {
+                height: 25px;
+                width: 25px;
             }
         }
+    }
     }
 }
 </style>
