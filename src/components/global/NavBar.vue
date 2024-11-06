@@ -58,9 +58,12 @@ export default {
                 }"
             >
                 <a class="header-btn-center" href="/">Home</a>
-                <a class="header-btn-center" href="#">About</a>
+                <a class="header-btn-center" href="/about">About</a>
                 <a class="header-btn-center" href="/portfolio">Portfolio</a>
                 <a class="header-btn-right" href="/contact">Contact</a>
+            </div>
+            <div class="header-right">
+                <a class="header-btn-right" href="/contact">Get in Touch</a>
             </div>
             <button class="mobile-menu" v-on:click="toggleMenu">
                 <svg
@@ -130,6 +133,7 @@ header {
         }
 
         .header-center {
+            margin: 0 auto;
             display: flex;
             gap: 30px;
 
@@ -138,9 +142,16 @@ header {
             }
 
             .header-btn-right {
+                display: none;
+            }
+        }
+
+        .header-right {
+            width: 191px;
+            .header-btn-right {
                 @include basic-btn(
                     var(--color-dark),
-                    5px 15px,
+                    8px 15px,
                     var(--color-light)
                 );
             }
@@ -178,8 +189,21 @@ header {
                 transition: top 0.5s ease;
             }
 
+            .header-right {
+                display: none;
+            }
+
             .header-center-active {
                 top: 0;
+
+                .header-btn-right {
+                    display: flex;
+                    @include basic-btn(
+                        var(--color-dark),
+                        8px 15px,
+                        var(--color-light)
+                    );
+                }
             }
 
             .mobile-menu {

@@ -47,6 +47,7 @@ h4,
 h5,
 h6 {
     font-family: "Roboto Serif", serif;
+    font-weight: 500;
 }
 
 @mixin basic-btn($background, $padding, $color) {

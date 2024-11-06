@@ -28,7 +28,7 @@
         text-align: center;
         font-size: 45px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         line-height: normal;
     }
 
