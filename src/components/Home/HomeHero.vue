@@ -20,7 +20,11 @@
                     backgrounds. If you are looking for a talented and
                     passionate developer, I am the right candidate for you.
                 </p>
-                <a href="/contact">Contact</a>
+                <div class="hero-buttons">
+                    <a href="/contact">Contact</a>
+                    <a href="/portfolio">Portfolio</a>
+                </div>
+                
             </div>
             <div class="hero-right">
                 <div class="ring-third">
@@ -114,6 +118,11 @@
                     color: var(--color-light-blue);
                     font-size: 64px;
                 }
+            }
+
+            .hero-buttons {
+                display: flex;
+                gap: 25px;
             }
 
             p {

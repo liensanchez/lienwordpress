@@ -33,7 +33,7 @@ export default {
             text-align: center;
             font-size: 64px;
             font-style: normal;
-            font-weight: 700;
+            font-weight: 500;
         }
     }
 
