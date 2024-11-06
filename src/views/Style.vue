@@ -173,5 +173,12 @@ export default {
             @include basic-btn(var(--color-dark), 10px 25px, var(--color-light));
         }
     }
+
+    @media (max-width: 768px) {
+        .colors,
+        .buttons {
+            flex-wrap: wrap;
+        }
+    }
 }
 </style>
