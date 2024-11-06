@@ -21,8 +21,12 @@
                     passionate developer, I am the right candidate for you.
                 </p>
                 <div class="hero-buttons">
-                    <a href="/contact">Contact</a>
-                    <a href="/portfolio">Portfolio</a>
+                    <a href="/contact">
+                        Contact
+                    </a>
+                    <a href="/portfolio">
+                        Portfolio
+                    </a>
                 </div>
                 
             </div>
@@ -57,6 +61,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -1px;
 
     .hero-content {
         display: flex;
@@ -133,7 +138,7 @@
 
             a {
                 margin: 25px auto;
-                @include basic-btn(
+                @include animation-btn(
                     var(--color-light),
                     10px 25px,
                     var(--color-dark)

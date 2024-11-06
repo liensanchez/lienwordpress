@@ -49,7 +49,7 @@
                     <div class="right-column">
                         <h2>Utility</h2>
                         <a href="/styles">Styles</a>
-                        <a href="">404</a>
+                        <a href="/404">404</a>
                     </div>
                 </div>
 
